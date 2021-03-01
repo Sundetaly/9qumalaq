@@ -7,7 +7,7 @@
 
 
 # Local Installing
-*чтобы запустить проект локальным создайте виртульный окружения и скачайте requirments из requirments.txt *  
+чтобы запустить проект локальным создайте виртульный окружения и скачайте requirments из requirments.txt *  
 ```
 pip3 install -r requirements.txt
 ```
