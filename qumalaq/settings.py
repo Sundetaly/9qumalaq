@@ -26,7 +26,7 @@ SECRET_KEY = '=q8((b+s2k@()2xitk)*ylz)j@)l*72w$a_^7ysu1s=%w14led'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -83,8 +83,12 @@ WSGI_APPLICATION = 'qumalaq.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'qumalaq',
+        'USER': 'qumalaq',
+        'PASSWORD': '9qumalaq@',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
