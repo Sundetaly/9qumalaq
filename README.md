@@ -7,6 +7,8 @@
 * psycopg2-binary==2.8.6
 * gunicorn==20.0.4
 * Pillow==8.1.1
+* django-cors-headers==3.7.0
+
 
 
 # Local Installing
