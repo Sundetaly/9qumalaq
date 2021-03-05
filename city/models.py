@@ -15,10 +15,20 @@ class City(models.Model):
         return self.name
 
 
-class CityLeaderShip(LeaderShip):
+class CityWinners(LeaderShip):
     class Meta:
         verbose_name = 'Лучший игрок'
         verbose_name_plural = 'Лучшие игроки'
+
+    image = models.ImageField(upload_to='city_winner/')
+    city = models.ForeignKey('City', related_name='winners',
+                             on_delete=models.SET_NULL, null=True)
+
+
+class CityLeaderShip(LeaderShip):
+    class Meta:
+        verbose_name = 'Руководствы'
+        verbose_name_plural = 'Руководства'
 
     image = models.ImageField(upload_to='city_leader/')
     city = models.ForeignKey('City', related_name='leader_ships',
