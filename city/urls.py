@@ -2,7 +2,8 @@ from django.conf.urls import url
 
 from city.views import CityListView, CityRetrieveView, \
     CityNewsRetrieveView, CityNewsListView, \
-    CityLeaderShipRetrieveView, CityLeaderShipListView
+    CityLeaderShipRetrieveView, CityLeaderShipListView, \
+    CityWinnerRetrieveView, CityWinnerListView
 
 
 urlpatterns = [
@@ -14,4 +15,7 @@ urlpatterns = [
 
     url(r'^news/$', CityNewsListView.as_view()),
     url(r'^news/(?P<pk>[0-9]+)/$', CityNewsRetrieveView.as_view()),
+
+    url(r'^winners/$', CityWinnerListView.as_view()),
+    url(r'^winners/(?P<pk>[0-9]+)/$', CityWinnerRetrieveView.as_view()),
 ]

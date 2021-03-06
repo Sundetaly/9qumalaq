@@ -1,8 +1,8 @@
 from rest_framework import generics
 
-from country.models import Country, CountryLeaderShip, CountryNews
+from country.models import Country, CountryLeaderShip, CountryNews, CountryWinner
 from country.serizlizers import CountrySerializer, CountryNewsSerializer, \
-    CountryLeaderShipSerializer
+    CountryLeaderShipSerializer, CountryWinnerSerializer
 
 
 class CountryListView(generics.ListAPIView):
@@ -33,3 +33,13 @@ class CountryNewsListView(generics.ListAPIView):
 class CountryNewsRetrieveView(generics.RetrieveAPIView):
     queryset = CountryNews.objects.all()
     serializer_class = CountryNewsSerializer
+
+
+class CountryWinnerListView(generics.ListAPIView):
+    queryset = CountryWinner.objects.all()
+    serializer_class = CountryWinnerSerializer
+
+
+class CountryWinnerRetrieveView(generics.RetrieveAPIView):
+    queryset = CountryWinner.objects.all()
+    serializer_class = CountryWinnerSerializer
