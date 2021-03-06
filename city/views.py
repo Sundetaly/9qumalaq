@@ -15,31 +15,55 @@ class CityRetrieveView(generics.RetrieveAPIView):
     serializer_class = CitySerializer
 
 
-class CityLeaderShipListView(generics.ListAPIView):
+class LeaderShipListView(generics.ListAPIView):
     queryset = CityLeaderShip.objects.all()
     serializer_class = CityLeaderShipSerializer
 
 
-class CityLeaderShipRetrieveView(generics.RetrieveAPIView):
+class LeaderShipCityView(generics.ListAPIView):
+    queryset = CityLeaderShip.objects.all()
+    serializer_class = CityLeaderShipSerializer
+
+    def get_queryset(self):
+        return CityLeaderShip.objects.filter(city__id=self.kwargs.get('pk'))
+
+
+class LeaderShipRetrieveView(generics.RetrieveAPIView):
     queryset = CityLeaderShip.objects.all()
     serializer_class = CityLeaderShipSerializer
 
 
-class CityNewsListView(generics.ListAPIView):
+class NewsListView(generics.ListAPIView):
     queryset = CityNews.objects.all()
     serializer_class = CityNewsSerializer
 
 
-class CityNewsRetrieveView(generics.RetrieveAPIView):
+class NewsCityView(generics.ListAPIView):
+    queryset = CityNews.objects.all()
+    serializer_class = CityNewsSerializer
+
+    def get_queryset(self):
+        return CityNews.objects.filter(city__id=self.kwargs.get('pk'))
+
+
+class NewsRetrieveView(generics.RetrieveAPIView):
     queryset = CityNews.objects.all()
     serializer_class = CityNewsSerializer
 
 
-class CityWinnerListView(generics.ListAPIView):
+class WinnerListView(generics.ListAPIView):
     queryset = CityWinners.objects.all()
     serializer_class = CityWinnerSerializer
 
 
-class CityWinnerRetrieveView(generics.RetrieveAPIView):
+class WinnerCityView(generics.ListAPIView):
+    queryset = CityWinners.objects.all()
+    serializer_class = CityWinnerSerializer
+
+    def get_queryset(self):
+        return CityWinners.objects.filter(city__id=self.kwargs.get('pk'))
+
+
+class WinnerRetrieveView(generics.RetrieveAPIView):
     queryset = CityWinners.objects.all()
     serializer_class = CityWinnerSerializer

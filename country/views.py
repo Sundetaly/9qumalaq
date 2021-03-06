@@ -15,31 +15,55 @@ class CountryRetrieveView(generics.RetrieveAPIView):
     serializer_class = CountrySerializer
 
 
-class CountryLeaderShipListView(generics.ListAPIView):
+class LeaderShipListView(generics.ListAPIView):
     queryset = CountryLeaderShip.objects.all()
     serializer_class = CountryLeaderShipSerializer
 
 
-class CountryLeaderShipRetrieveView(generics.RetrieveAPIView):
+class LeaderShipCountryView(generics.ListAPIView):
+    queryset = CountryLeaderShip.objects.all()
+    serializer_class = CountryLeaderShipSerializer
+
+    def get_queryset(self):
+        return CountryLeaderShip.objects.filter(country__id=self.kwargs.get('pk'))
+
+
+class LeaderShipRetrieveView(generics.RetrieveAPIView):
     queryset = CountryLeaderShip.objects.all()
     serializer_class = CountryLeaderShipSerializer
 
 
-class CountryNewsListView(generics.ListAPIView):
+class NewsListView(generics.ListAPIView):
     queryset = CountryNews.objects.all()
     serializer_class = CountryNewsSerializer
 
 
-class CountryNewsRetrieveView(generics.RetrieveAPIView):
+class NewsCountryView(generics.ListAPIView):
+    queryset = CountryNews.objects.all()
+    serializer_class = CountryNewsSerializer
+
+    def get_queryset(self):
+        return CountryNews.objects.filter(country__id=self.kwargs.get('pk'))
+
+
+class NewsRetrieveView(generics.RetrieveAPIView):
     queryset = CountryNews.objects.all()
     serializer_class = CountryNewsSerializer
 
 
-class CountryWinnerListView(generics.ListAPIView):
+class WinnerListView(generics.ListAPIView):
     queryset = CountryWinner.objects.all()
     serializer_class = CountryWinnerSerializer
 
 
-class CountryWinnerRetrieveView(generics.RetrieveAPIView):
+class WinnerCountryView(generics.ListAPIView):
+    queryset = CountryWinner.objects.all()
+    serializer_class = CountryWinnerSerializer
+
+    def get_queryset(self):
+        return CountryWinner.objects.filter(country__id=self.kwargs.get('pk'))
+
+
+class WinnerRetrieveView(generics.RetrieveAPIView):
     queryset = CountryWinner.objects.all()
     serializer_class = CountryWinnerSerializer
