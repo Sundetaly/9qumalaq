@@ -1,24 +1,8 @@
-# Requrements
-
-* Python=3.8
-* Django==3.1.7
-* djangorestframework==3.12.2
-* drf-yasg==1.20.0
-* psycopg2-binary==2.8.6
-* gunicorn==20.0.4
-* Pillow==8.1.1
-* django-cors-headers==3.7.0
-
-
-
-# Local Installing
-чтобы запустить проект локальным создайте виртульный окружения и скачайте requirments из requirments.txt *  
-```
-pip3 install -r requirements.txt
-```
-
-# Running
-```
-./manage.py migrate
-./manage.py runserver
-```
+# Installing
+- Clone repository
+- Go to folder `cd qumalaq`
+- Install virualenv with name env `python3 -m venv env`
+- Install PostgreSQL
+- Create user and database in PostgreSQL, and grant all privileges `CREATE USER qumalaq WITH PASSWORD '9qumalaq@'; CREATE DATABASE qumalaq WITH OWNER qumalaq; GRANT ALL PRIVILEGES ON DATABASE qumalaq TO qumalaq`
+- Run all migrations `python3 manage.py migrate`
+- Start the server `python3 manage.py runserver`
