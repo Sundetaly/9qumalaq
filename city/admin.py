@@ -1,10 +1,24 @@
 from django.contrib import admin
 
 from city.models import City, CityLeaderShip, CityNews, CityWinners
-# Register your models here.
+from core.mixins import AdminDisplayNameMixin, AdminDisplayTitleMixin
 
-admin.site.register(City)
-admin.site.register(CityLeaderShip)
-admin.site.register(CityNews)
-admin.site.register(CityWinners)
 
+@admin.register(City)
+class CityAdmin(AdminDisplayNameMixin, admin.ModelAdmin):
+    pass
+
+
+@admin.register(CityLeaderShip)
+class CityLeaderShipAdmin(AdminDisplayNameMixin, admin.ModelAdmin):
+    pass
+
+
+@admin.register(CityNews)
+class CityNewsAdmin(AdminDisplayTitleMixin, admin.ModelAdmin):
+    pass
+
+
+@admin.register(CityWinners)
+class CityNewsAdmin(AdminDisplayNameMixin, admin.ModelAdmin):
+    pass
