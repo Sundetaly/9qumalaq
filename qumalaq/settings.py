@@ -17,7 +17,6 @@ from dotenv import load_dotenv
 
 env_path = (Path(__file__) / '..' / '..').resolve() / '.env'
 load_dotenv(dotenv_path=env_path)
-print(env_path)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
