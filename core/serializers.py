@@ -5,7 +5,7 @@ from core.constants import lang_kz, lang_en
 
 class NameSerializer(serializers.ModelSerializer):
     class Meta:
-        fields = ('name',)
+        fields = ('id', 'name')
 
     def to_representation(self, instance):
         request = self.context.get('request')
@@ -21,7 +21,7 @@ class NameSerializer(serializers.ModelSerializer):
 
 class LeaderShipSerializer(serializers.ModelSerializer):
     class Meta:
-        fields = ('name', 'rank', 'address', 'degree',
+        fields = ('id', 'name', 'rank', 'address', 'degree',
                   'description', 'bitrhday', 'assigned_degree')
 
     def to_representation(self, instance):
@@ -46,7 +46,7 @@ class LeaderShipSerializer(serializers.ModelSerializer):
 
 class NewsSerializer(serializers.ModelSerializer):
     class Meta:
-        fields = ('title', 'description', 'published', 'altered')
+        fields = ('id', 'title', 'description', 'published', 'altered')
 
     def to_representation(self, instance):
         request = self.context.get('request')
