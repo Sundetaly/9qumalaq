@@ -1,29 +1,25 @@
-from rest_framework import serializers
+from core.serializers import NameSerializer, NewsSerializer, LeaderShipSerializer
 
 from country.models import Country, CountryLeaderShip, CountryNews, CountryWinner
 
 
-class CountrySerializer(serializers.ModelSerializer):
-    class Meta:
+class CountrySerializer(NameSerializer):
+    class Meta(NameSerializer.Meta):
         model = Country
-        fields = '__all__'
 
 
-class CountryLeaderShipSerializer(serializers.ModelSerializer):
-    class Meta:
+class CountryLeaderShipSerializer(LeaderShipSerializer):
+    class Meta(LeaderShipSerializer.Meta):
         model = CountryLeaderShip
-        fields = '__all__'
 
 
-class CountryNewsSerializer(serializers.ModelSerializer):
-    class Meta:
+class CountryNewsSerializer(NewsSerializer):
+    class Meta(NewsSerializer.Meta):
         model = CountryNews
-        fields = '__all__'
 
 
-class CountryWinnerSerializer(serializers.ModelSerializer):
-    class Meta:
+class CountryWinnerSerializer(LeaderShipSerializer):
+    class Meta(LeaderShipSerializer.Meta):
         model = CountryWinner
-        fields = '__all__'
 
 

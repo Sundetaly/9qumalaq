@@ -1,27 +1,25 @@
 from rest_framework import serializers
 
+from core.serializers import NameSerializer, LeaderShipSerializer, NewsSerializer
+
 from city.models import City, CityNews, CityLeaderShip, CityWinners
 
 
-class CitySerializer(serializers.ModelSerializer):
-    class Meta:
+class CitySerializer(NameSerializer):
+    class Meta(NameSerializer.Meta):
         model = City
-        fields = '__all__'
 
 
-class CityLeaderShipSerializer(serializers.ModelSerializer):
-    class Meta:
+class CityLeaderShipSerializer(LeaderShipSerializer):
+    class Meta(LeaderShipSerializer.Meta):
         model = CityLeaderShip
-        fields = '__all__'
 
 
-class CityNewsSerializer(serializers.ModelSerializer):
-    class Meta:
+class CityNewsSerializer(NewsSerializer):
+    class Meta(NewsSerializer.Meta):
         model = CityNews
-        fields = '__all__'
 
 
-class CityWinnerSerializer(serializers.ModelSerializer):
-    class Meta:
+class CityWinnerSerializer(LeaderShipSerializer):
+    class Meta(LeaderShipSerializer.Meta):
         model = CityWinners
-        fields = '__all__'
