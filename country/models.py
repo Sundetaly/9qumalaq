@@ -1,16 +1,11 @@
 from django.db import models
-from core.models import LeaderShip, News
+from core.models import Name, LeaderShip, News
 
 
-class Country(models.Model):
+class Country(Name):
     class Meta:
         verbose_name = 'Страна'
         verbose_name_plural = 'Страны'
-        ordering = ['name']
-    name = models.CharField(max_length=150)
-
-    def __str__(self):
-        return self.name
 
 
 class CountryWinner(LeaderShip):

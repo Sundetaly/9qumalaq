@@ -1,18 +1,12 @@
 from django.db import models
 
-from core.models import News, LeaderShip
+from core.models import Name, News, LeaderShip
 
 
-class City(models.Model):
+class City(Name):
     class Meta:
         verbose_name = 'Город'
         verbose_name_plural = 'Города'
-        ordering = ['name']
-
-    name = models.CharField(max_length=150)
-
-    def __str__(self):
-        return self.name
 
 
 class CityWinners(LeaderShip):
