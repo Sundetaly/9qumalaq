@@ -22,7 +22,7 @@ class NameSerializer(serializers.ModelSerializer):
 class LeaderShipSerializer(serializers.ModelSerializer):
     class Meta:
         fields = ('id', 'name', 'rank', 'address', 'degree',
-                  'description', 'bitrhday', 'assigned_degree')
+                  'description', 'bitrhday', 'assigned_degree', 'image')
 
     def to_representation(self, instance):
         request = self.context.get('request')
@@ -46,7 +46,7 @@ class LeaderShipSerializer(serializers.ModelSerializer):
 
 class NewsSerializer(serializers.ModelSerializer):
     class Meta:
-        fields = ('id', 'title', 'description', 'published', 'altered')
+        fields = ('id', 'title', 'description', 'published', 'altered', 'image')
 
     def to_representation(self, instance):
         request = self.context.get('request')
