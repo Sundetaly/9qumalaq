@@ -11,14 +11,17 @@ class CityAdmin(AdminDisplayNameMixin, admin.ModelAdmin):
 
 @admin.register(CityLeaderShip)
 class CityLeaderShipAdmin(AdminDisplayNameMixin, admin.ModelAdmin):
-    pass
+    list_display = AdminDisplayNameMixin.list_display+("city",)
+    list_display_links = AdminDisplayNameMixin.list_display + ("city",)
 
 
 @admin.register(CityNews)
 class CityNewsAdmin(AdminDisplayTitleMixin, admin.ModelAdmin):
-    pass
+    list_display = AdminDisplayTitleMixin.list_display + ("city",)
+    list_display_links = AdminDisplayTitleMixin.list_display + ("city", )
 
 
 @admin.register(CityWinners)
 class CityNewsAdmin(AdminDisplayNameMixin, admin.ModelAdmin):
-    pass
+    list_display = AdminDisplayNameMixin.list_display + ("city",)
+    list_display_links = AdminDisplayNameMixin.list_display + ("city", )

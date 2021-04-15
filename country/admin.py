@@ -11,14 +11,17 @@ class CountryAdmin(AdminDisplayNameMixin, admin.ModelAdmin):
 
 @admin.register(CountryLeaderShip)
 class CountryLeaderShipAdmin(AdminDisplayNameMixin, admin.ModelAdmin):
-    pass
+    list_display = AdminDisplayNameMixin.list_display + ("country",)
+    list_display_links = AdminDisplayNameMixin.list_display_links + ("country",)
 
 
 @admin.register(CountryNews)
 class CountryNewsAdmin(AdminDisplayTitleMixin, admin.ModelAdmin):
-    pass
+    list_display = AdminDisplayTitleMixin.list_display + ("country",)
+    list_display_links = AdminDisplayTitleMixin.list_display_links + ("country",)
 
 
 @admin.register(CountryWinner)
 class CountryNewsAdmin(AdminDisplayNameMixin, admin.ModelAdmin):
-    pass
+    list_display = AdminDisplayNameMixin.list_display + ("country",)
+    list_display_links = AdminDisplayNameMixin.list_display_links + ("country",)
