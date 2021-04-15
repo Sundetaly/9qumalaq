@@ -12,14 +12,17 @@ class CitySerializer(NameSerializer):
 
 class CityLeaderShipSerializer(LeaderShipSerializer):
     class Meta(LeaderShipSerializer.Meta):
+        fields = LeaderShipSerializer.Meta.fields + ('city',)
         model = CityLeaderShip
 
 
 class CityNewsSerializer(NewsSerializer):
     class Meta(NewsSerializer.Meta):
+        fields = NewsSerializer.Meta.fields + ('city',)
         model = CityNews
 
 
 class CityWinnerSerializer(LeaderShipSerializer):
     class Meta(LeaderShipSerializer.Meta):
+        fields = LeaderShipSerializer.Meta.fields + ('city',)
         model = CityWinners

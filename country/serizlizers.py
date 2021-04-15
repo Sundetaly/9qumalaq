@@ -10,16 +10,19 @@ class CountrySerializer(NameSerializer):
 
 class CountryLeaderShipSerializer(LeaderShipSerializer):
     class Meta(LeaderShipSerializer.Meta):
+        fields = LeaderShipSerializer.Meta.fields + ('country',)
         model = CountryLeaderShip
 
 
 class CountryNewsSerializer(NewsSerializer):
     class Meta(NewsSerializer.Meta):
+        fields = NewsSerializer.Meta.fields + ('country',)
         model = CountryNews
 
 
 class CountryWinnerSerializer(LeaderShipSerializer):
     class Meta(LeaderShipSerializer.Meta):
+        fields = LeaderShipSerializer.Meta.fields + ('country',)
         model = CountryWinner
 
 
