@@ -23,7 +23,7 @@ schema_view = get_schema_view(
 )
 
 urlpatterns = [
-    url(r'^api/admin/', admin.site.urls),
+    url(r'^admin/', admin.site.urls),
 
     url(r'^api/country/', include('country.urls')),
     url(r'^api/city/', include('city.urls')),
